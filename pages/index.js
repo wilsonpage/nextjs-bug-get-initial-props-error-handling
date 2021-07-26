@@ -67,3 +67,11 @@ export default function Home() {
     </div>
   )
 }
+
+Home.getInitialProps = async ({ query }) => {
+  if (query.throwInGetInitialProps) {
+    throw new Error('getInitialProps error');
+  }
+
+  return {};
+};
